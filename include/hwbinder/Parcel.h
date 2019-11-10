@@ -35,11 +35,11 @@ namespace android {
 namespace hardware {
 
 #ifdef BINDER_IPC_32BIT
-typedef __u32 binder_size_t;
-typedef __u32 binder_uintptr_t;
+typedef unsigned int binder_size_t;
+typedef unsigned int binder_uintptr_t;
 #else
-typedef __u64 binder_size_t;
-typedef __u64 binder_uintptr_t;
+typedef unsigned long long binder_size_t;
+typedef unsigned long long binder_uintptr_t;
 #endif
 
 class IBinder;
@@ -322,8 +322,8 @@ status_t unflatten_binder(const sp<ProcessState>& proc,
 status_t unflatten_binder(const sp<ProcessState>& proc,
                           const flat_binder_object& flat, wp<IBinder>* out);
 
-}; // namespace hardware
-}; // namespace android
+} // namespace hardware
+} // namespace android
 
 // ---------------------------------------------------------------------------
 

@@ -248,7 +248,8 @@ size_t ProcessState::getMmapSize() {
 }
 
 void ProcessState::setCallRestriction(CallRestriction restriction) {
-    LOG_ALWAYS_FATAL_IF(IPCThreadState::selfOrNull(), "Call restrictions must be set before the threadpool is started.");
+    LOG_ALWAYS_FATAL_IF(IPCThreadState::selfOrNull() != nullptr,
+        "Call restrictions must be set before the threadpool is started.");
 
     mCallRestriction = restriction;
 }
@@ -469,5 +470,5 @@ ProcessState::~ProcessState()
     mDriverFD = -1;
 }
 
-}; // namespace hardware
-}; // namespace android
+} // namespace hardware
+} // namespace android
