@@ -73,9 +73,9 @@ cc_library {
     vendor_available: true,
 
     export_include_dirs: ["include"],
+
 // TODO(b/144056694) Add back this visibility restriction.
 //    visibility: [
-//        "//device:__subpackages__",
 //        "//vendor:__subpackages__",
 //    ],
 }
